@@ -58,16 +58,14 @@ export class App extends Component {
     const { filter } = this.state;
 
     return (
-      <div
-        className="app-container"
-      >
+      <div className="app-container">
         <h1>Phonebook</h1>
         <ContactForm handleSubmit={this.handleSubmit} />
         <h2> Contacts</h2>
-        <Filter filter={filter} handleChange={this.handleChange} />
+        <Filter filter={filter} onFilterChange={this.handleFilterChange} />
         <ContactList
           contacts={this.getFilteredContacts()}
-          handleDelete={this.handleDelete}
+          onDelete={this.handleDelete}
         />
       </div>
     );
